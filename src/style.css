@@ -1,0 +1,785 @@
+body {
+    font-family: Poppins;
+    background-color: hsl(227, 100%, 92%);
+    position: relative;
+    margin: 0;
+}
+
+.tint-cover {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    background: #afafaf8a;
+    justify-content: center;
+    align-items: center;
+    z-index: 7;
+}
+
+.delete-warning-box {
+    height: 220px;
+    width: 400px;
+    padding: 2.5% 2.5% 1% 2.5%;
+    border-radius: 10px;
+    background: ghostwhite;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 8;
+    left: calc((48vw - 400px)/2);
+    top: calc((100vh - 220px)/2);
+}
+
+.warning-title {
+    padding-bottom: 3%;
+    color: #414141;
+    font-size: 23px;
+    font-weight: 500;
+    user-select: none;
+}
+
+.warning-message {
+    color: #797979;
+    font-size: 17px;
+    user-select: none;
+}
+
+.warning-options {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+.cancel-option {
+    height: 40px;
+    width: 45%;
+    background-color: rgb(97, 97, 97);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: ghostwhite;
+}
+
+.delete-option {
+    height: 40px;
+    width: 45%;
+    background-color: rgb(243, 66, 66);
+    border-radius: 10px;
+    position: relative;
+    right: -35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: ghostwhite;
+}
+
+.cancel-option:hover {
+    background-color: black;
+}
+
+.delete-option:hover {
+    background-color: red;
+}
+
+.commentSection {
+    height: 75vh;
+    width: 48vw;
+    position: relative;
+    left: 25vw;
+    overflow-y: scroll;
+    background-color: white;
+    padding-bottom: 1rem;
+}
+
+.commentSection::-webkit-scrollbar {width: 7px;}
+.commentSection::-webkit-scrollbar-track {background: hsla(278, 66%, 66%, 0.219)}
+.commentSection::-webkit-scrollbar-thumb {background: hsla(278, 84%, 42%, 0.397);}
+.commentSection::-webkit-scrollbar-thumb:hover {background: hsla(278, 84%, 42%, 0.897);}
+
+.vertical-line {
+    background-color: gray;
+    width: 3px;
+    height: 110px;
+    position: absolute;
+    left: 100px;
+    z-index: 3;
+}
+
+.comment {
+    background-color: rgb(200, 192, 245);
+    height: fit-content;
+    min-height: 95px;
+    width: 40vw;
+    margin: auto;
+    margin-top: 1%;
+    border-radius: 6px;
+    padding-bottom: 10px;
+}
+
+.comment-votes {
+    background-color: hsl(223, 19%, 93%);
+    height: 50px;
+    width: 4%;
+    position: relative;
+    top: 15px;
+    left: 4%;
+    border-radius: 0.5rem;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 12px;
+    color: hsl(238, 40%, 52%)
+}
+
+.comment-plus-button {
+    font-weight: 500;
+    font-size: 22px;
+    color: hsl(211, 10%, 45%);
+    cursor: pointer;
+    user-select: none;
+}
+
+.comment-voteAmount {
+    font-size: 15px;
+    font-weight: 700
+}
+
+.comment-minus-button {
+    font-weight: 500;
+    font-size: 22px;
+    color: hsl(211, 10%, 45%);
+    cursor: pointer;
+    user-select: none;
+}
+
+.comment-titles {
+    position: relative;
+    left: 12%;
+    margin-top: -65px;
+    width: 88%;
+    display: flex;
+    flex-direction: row;
+}
+
+.comment-pfp {
+    height: 5%;
+    width: 5%;
+    float: left;
+    position: relative;
+    cursor: pointer;
+}
+
+.comment-username {
+    position: relative;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 0.7%;
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+.comment-user-indicator {
+    user-select: none;
+    background: hsl(266, 75%, 52%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 12px;
+    color: white;
+    height: 20px;
+    width: 30px;
+    position: relative;
+    margin-left: 1%;
+    border-radius: 3px;
+}
+
+.comment-datePosted {
+    position: relative; 
+    margin-left: 3%;
+    font-size: 13px;
+    font-weight: 300;
+    color: hsl(211, 10%, 45%);
+}
+
+.comment-delete-button {
+    margin-top: 0.3%;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ff00003d;
+    position: relative;
+    margin-left: 6%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.comment-delete-button:hover {
+    color: red;
+}
+
+.comment-delete-logo {
+    height: 48%;
+    width: 20%;
+}
+
+.comment-edit-button {
+    margin-top: 0.3%;
+    font-size: 12px;
+    font-weight: 700;
+    color: #9698df;
+    position: relative;
+    margin-left: 3%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.comment-edit-button:hover {
+    color: #1900ff;
+}
+
+.comment-edit-logo {
+    height: 40%;
+    width: 25%;
+}
+
+.comment-reply-button {
+    margin-top: 0.3%;
+    font-size: 13px;
+    font-weight: 700;
+    color: hsl(238, 40%, 52%);
+    position: relative;
+    /* margin-left: 6%; */
+    cursor: pointer;
+    user-select: none;
+}
+
+.comment-reply-button:hover {
+    color: #8400ff;
+}
+
+.comment-reply-logo {
+    height: 40%;
+    width: 20%;
+}
+
+.comment-text {
+    font-size: 13px;
+    color: hsl(0, 0%, 0%);
+    height: 60%;
+    width: 80%;
+    position: relative;
+    left: 12%;
+    margin-top: 10px;
+}
+
+.comment-edit-input {
+    position: relative;
+    top: 5px;
+    left: 65px;
+    resize: none;
+    text-decoration: none;
+    font-family: inherit;
+    padding: 1.5%;
+    border-radius: 0.5rem;
+    position: relative;
+    z-index: 4;
+}
+
+.comment-edit-input:focus {
+    border: 1px solid rgb(63, 21, 212);
+    outline: rgb(45, 42, 235);
+}
+
+.comment-update-button {
+    background-color: hsl(238, 40%, 52%);
+    height: 30px;
+    width: 60px;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 454px; 
+    margin-top: 5px;
+    color: white;
+    font-weight: 500;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
+
+.comment-update-button:hover {
+    background-color: hsl(266, 75%, 52%);
+}
+
+.replies {
+    width: 32vw;
+    height: fit-content;
+    min-height: 75px;
+    background-color: rgb(200, 192, 245);
+    margin-top: 1%;
+    position: relative;
+    left: 25%;
+    border-radius: 7px;
+    padding-bottom: 10px;
+}
+
+.reply-votes {
+    background-color: hsl(223, 19%, 93%);
+    height: 60px;
+    width: 5.5%;
+    position: relative;
+    top: 13px;
+    left: 3%;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 12px;
+    color: hsl(238, 40%, 52%);
+}
+
+.reply-plus-button {
+    font-weight: 500;
+    font-size: 22px;
+    color: hsl(211, 10%, 45%);
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    top: 8px;
+}
+
+.reply-voteAmount {
+    font-size: 15px;
+    font-weight: 700
+}
+
+.reply-minus-button {
+    font-weight: 500;
+    font-size: 22px;
+    color: hsl(211, 10%, 45%);
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    bottom: 5px;
+}
+
+.reply-titles {
+    position: relative;
+    left: 12%;
+    margin-top: -50px;
+    width: 88%;
+    display: flex;
+    flex-direction: row;
+}
+
+.reply-pfp {
+    height: 5%;
+    width: 5%;
+    cursor: pointer;
+}
+
+.reply-username {
+    position: relative;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 0.7%;
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+.reply-user-indicator {
+    user-select: none;
+    background: hsl(266, 75%, 52%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: white;
+    height: 16px;
+    width: 26px;
+    position: relative;
+    border-radius: 3px;
+    margin-left: 1%;
+}
+
+.reply-datePosted {
+    position: relative;
+    font-size: 10px;
+    font-weight: 300;
+    margin-left: 1%;
+    margin-top: 1%;
+    color: hsl(211, 10%, 45%);
+}
+
+.reply-delete-button {
+    position: relative;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 0, 0, 0.24);
+    cursor: pointer;
+    margin-left: 3%;
+    user-select: none;
+}
+
+.reply-delete-button:hover {
+    color:red;
+}
+
+.reply-delete-logo {
+    height: 45%;
+    width: 20%;
+}
+.reply-edit-button {
+    position: relative;
+    font-size: 12px;
+    font-weight: 700;
+    color: hsl(238, 53%, 73%);
+    cursor: pointer;
+    margin-left: 3%;
+    user-select: none;
+}
+
+.reply-edit-button:hover {
+    color: hsl(246, 100%, 50%);
+}
+
+.reply-edit-logo {
+    height: 45%;
+    width: 20%;
+}
+.reply-reply-button {
+    position: relative;
+    font-size: 12px;
+    font-weight: 700;
+    color: hsl(238, 40%, 52%);
+    cursor: pointer;
+    margin-left: 1%;
+    user-select: none;
+}
+
+.reply-reply-button:hover {
+    color: hsl(271, 100%, 50%);
+}
+
+.reply-reply-logo {
+    height: 45%;
+    width: 20%;
+}
+
+.reply-text {
+    font-size: 11px;
+    color: hsl(0, 0%, 0%);
+    /* height: 30px; */
+    width: 85%;
+    position: relative;
+    left: 12%;
+    margin-top: 8px;
+}
+
+.replying-to {
+    font-weight: 600;
+    color: blue;
+    cursor: pointer;
+}
+
+.reply-edit-input {
+    position: relative;
+    top: 5px;
+    left: 65px;
+    resize: none;
+    text-decoration: none;
+    font-family: inherit;
+    padding: 1.5%;
+    border-radius: 0.5rem;
+    position: relative;
+    z-index: 4;
+}
+
+.reply-edit-input:focus {
+    border: 1px solid rgb(63, 21, 212);
+    outline: rgb(45, 42, 235);
+}
+
+.reply-update-button {
+    background-color: hsl(238, 40%, 52%);
+    height: 28px;
+    width: 56px;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 345px; 
+    margin-top: 5px;
+    color: white;
+    font-weight: 500;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.reply-update-button:hover {
+    background-color: hsl(266, 75%, 52%);
+}
+
+.inputArea {
+    background-color: white;
+    height: 15vh;
+    width: 40vw;
+    border-radius: 0.6rem;
+    position: absolute;
+    top: 82vh;
+    left: calc((100vw - 40vw)/2);
+    position: fixed;
+}
+
+.messagepfp {
+    float: left;
+    height: calc(7% * (40vw/15vh));
+    width: 7%;
+    position: relative;
+    top: 10%;
+    left: 5%;
+}
+
+.message-input {
+    position: relative;
+    top: 10%;
+    left: 7%;
+    resize: none;
+    text-decoration: none;
+    font-family: inherit;
+    padding: 1.5%;
+    border-radius: 0.5rem;
+} 
+
+.message-input:focus {
+    border: 1px solid rgb(63, 21, 212);
+    outline: rgb(45, 42, 235);
+}
+
+.submit {
+    float: right;
+    background-color: hsl(238, 40%, 52%);
+    padding: 2% 4%;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-family: Poppins;
+    align-items: center;
+    top: 10%;
+    right: 6%;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    border: none;
+}
+
+.submit:hover {
+    background-color: hsl(266, 75%, 52%);
+}
+
+.empty-reply-coverer {
+    height: 1000px;
+    width: 100%;
+    background-color: rgba(91, 99, 99, 0.192);
+    position: absolute;
+    z-index: 4;
+    top: -50px;
+}
+
+.empty-reply {
+    background-color: rgb(200, 192, 245);
+    height: 15vh;
+    width: 40vw;
+    margin: auto;
+    margin-top: 1%;
+    border-radius: 0.6rem;
+    position: relative;
+    z-index: 4;
+}
+
+.empty-reply-pfp {
+    float: left;
+    height: calc(6% * (40vw/15vh));
+    width: 6%;
+    position: relative;
+    top: 10%;
+    left: 3%;
+    position: relative;
+    z-index: 4;
+}
+
+.empty-reply-input {
+    position: relative;
+    top: 10%;
+    left: 6%;
+    resize: none;
+    text-decoration: none;
+    font-family: inherit;
+    padding: 1.5%;
+    border-radius: 0.5rem;
+    position: relative;
+    z-index: 4;
+} 
+
+.empty-reply-input:focus {
+    border: 1px solid rgb(63, 21, 212);
+    outline: rgb(45, 42, 235);
+}
+
+.empty-reply-submit-button {
+    float: right;
+    background-color: hsla(238, 40%, 52%, 0.574);
+    height: 30%;
+    width: 10%;
+    border-radius: 8px;
+    position: relative;
+    padding: 0 5px 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10%;
+    right: 4%;
+    color: white;
+    font-weight: 500;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.empty-reply-submit-button:hover {
+    background-color: hsl(266, 75%, 52%);
+}
+
+.empty-reply-cancel-button {
+    float: right;
+    background-color: rgba(255, 0, 0, 0.582);
+    height: 30%;
+    width: 10%;
+    border-radius: 8px;
+    padding: 0 5px 0 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 55%;
+    right: -8%;
+    color: white;
+    font-weight: 500;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.empty-reply-cancel-button:hover {
+    background-color: red;
+}
+
+.empty-reply-reply {
+    background-color: rgb(200, 192, 245);
+    height: 14vh;
+    width: 32vw;
+    margin-top: 1%;
+    border-radius: 0.6rem;
+    position: relative;
+    left: 25%;
+    z-index: 4;
+}
+
+.empty-reply-reply-pfp {
+    float: left;
+    height: calc(6% * (40vw/15vh));
+    width: 6%;
+    position: relative;
+    top: 10%;
+    left: 3%;
+    position: relative;
+    z-index: 4;
+}
+
+.empty-reply-reply-input {
+    position: relative;
+    top: 10%;
+    left: 6%;
+    resize: none;
+    text-decoration: none;
+    font-family: inherit;
+    padding: 1.5%;
+    border-radius: 0.5rem;
+    position: relative;
+    z-index: 4;
+} 
+
+.empty-reply-reply-input:focus {
+    border: 1px solid rgb(63, 21, 212);
+    outline: rgb(45, 42, 235);
+}
+
+.empty-reply-reply-submit-button {
+    float: right;
+    background-color: hsla(238, 40%, 52%, 0.574);
+    height: 30%;
+    width: 10%;
+    border-radius: 8px;
+    position: relative;
+    padding: 0 5px 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10%;
+    right: 4%;
+    color: white;
+    font-weight: 500;
+    font-size: 11px;
+    border: none;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.empty-reply-reply-submit-button:hover {
+    background-color: hsl(266, 75%, 52%);
+}
+
+.empty-reply-reply-cancel-button {
+    float: right;
+    background-color: rgba(255, 0, 0, 0.582);
+    height: 30%;
+    width: 10%;
+    border-radius: 8px;
+    padding: 0 5px 0 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    right: -8.5%;
+    color: white;
+    font-weight: 500;
+    font-size: 11px;
+    border: none;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.empty-reply-reply-cancel-button:hover {
+    background-color: red;
+}
+
+.ruler {
+    background-color: black;
+    height: 100vh;
+    width: 20px;
+    position: absolute;
+    z-index: 10;
+    left: 880px;
+}

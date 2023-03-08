@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time elapsed test</title>
+</head>
+<body>
+    <h1></h1>
+</body>
+<script>
+    let h = document.querySelector('h1')
+    function timeElapsed(start, now) {
+        let start_seconds = Math.round(start/1000)
+        let now_seconds = Math.round(now/1000)
+        let start_minutes = Math.round(start_seconds/60)
+        let now_minutes = Math.round(now_seconds/60)
+        let start_hours = Math.round(start_minutes/60)
+        let now_hours = Math.round(now_minutes/60)
+        let start_days = Math.round(start_hours/24)
+        let now_days = Math.round(now_hours/24)
+        let start_weeks = Math.round(start_days/24)
+        let now_weeks = Math.round(now_days/24)
+
+        console.log(now_seconds - start_seconds)
+        if(Math.abs(start_seconds - now_seconds) < 60) {
+            return (start_seconds < now_seconds) ? 
+            `${Math.abs(start_seconds - now_seconds)} ${Math.abs(start_seconds - now_seconds) < 2 ? 'second' : 'seconds'} ago` : 
+            `${60-(start_seconds - now_seconds)} ${60-(start_seconds - now_seconds) < 2 ? 'second' : 'seconds'} ago`
+        } else if ((now_minutes - start_minutes) < 60) {
+            return (start_minutes < now_minutes) ? 
+            `${Math.abs(start_minutes - now_minutes)} ${Math.abs(start_minutes - now_minutes) < 2 ? 'minute' : 'minutes'} ago` : 
+            `${60-(start_minutes - now_minutes)} ${60-(start_minutes - now_minutes) < 2 ? 'minute' : 'minutes'} ago`
+        } else if ((now_hours - start_hours) < 24) {
+            return (start_hours < now_hours) ? 
+            `${Math.abs(start_hours - now_hours)} ${Math.abs(start_hours - now_hours) < 2 ? 'hour' : 'hours'} ago` : 
+            `${24-(start_hours - now_hours)} ${24-(start_hours - now_hours) < 2 ? 'hour' : 'hours'} ago`
+        } else if ((now_days - start_days) < 7) {
+            return (start_days < now_days) ? 
+            `${Math.abs(start_days - now_days)} ${Math.abs(start_days - now_days) < 2 ? 'day' : 'days'} ago` : 
+            `${7-(start_days - now_days)} ${7-(start_days - now_days) < 2 ? 'day' : 'days'} ago`
+        } else if ((now_weeks - start_weeks) < 5) {
+            return (start_weeks < now_weeks) ? 
+            `${Math.abs(start_weeks - now_weeks)} ${Math.abs(start_weeks - now_weeks) < 2 ? 'week' : 'weeks'} ago` : 
+            `${5-(start_weeks - now_weeks)} ${5-(start_weeks - now_weeks) < 2 ? 'week' : 'weeks'} ago`
+        } else if ((now_days - start_days) > 30) {
+            return `${(now_days - start_days)%30} ${((now_days - start_days)%30)< 2 ? 'month' : 'months'} ago`
+        } else if ((now_days - start_days) > 365) {
+            return `${(now_days - start_days)%365} ${((now_days - start_days)%365)< 2 ? 'month' : 'months'} ago`
+        } 
+    }
+
+
+    function elapsed(start, now) {
+        let secondsAmount = now.getSeconds() - start.getSeconds()
+        let minutesAmount = now.getMinutes() - start.getMinutes()
+        let hoursAmount = now.getHours() - start.getHours()
+        let dayAmount = now.getDate() - start.getDate()
+        let monthAmount = (now.getMonth()+1) - (start.getMonth()+1)
+        let yearAmount = (now.getFullYear()) - (start.getFullYear())
+    }
+
+    let begin = new Date()
+    setInterval(() => {
+        h.textContent = timeElapsed(begin, new Date())
+        // console.log(timeElapsed(h, new Date()));
+    }, 500)
+
+</script>
+</html>
